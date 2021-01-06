@@ -1,0 +1,219 @@
+
+
+
+
+<html>
+    <head>
+        <title>John Bergschneider</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Archivo|Roboto&display=swap" rel="stylesheet" type="text/css"> 
+        <link rel="stylesheet" href="{% static 'css/plog.css' %}">
+        
+    </head>
+
+
+<style>
+
+ .ul{text-align: center;
+     }
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+      font-family: 'Roboto';font-size: 17px;
+
+  margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 60px;
+  text-align: center;
+  background: white;
+  font-family: 'Roboto';font-size: 18px;
+  background-color: #ddd;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  font-family: 'Roboto';font-size: 18px;
+  display: flex;
+  background-color: #333;
+  text-align: center;
+ 
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  color: white;
+  font-family: 'Roboto';font-size: 18px;  
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+}
+
+
+
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #bbb;
+  color: black;
+}
+
+
+
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Main column */
+.main {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 30px;
+    text-align: center;
+   background-color: white;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row, .navbar {   
+    flex-direction: column;
+}
+  
+}
+
+
+/* Calendar */
+
+.calendar table, .calendar th, .calendar tr, .calendar td {
+  border: 1px solid black;
+}
+
+.calendar th, .calendar tr, .calendar td {
+  padding: 12px;
+}
+
+.calendar td.header {
+  font-weight: 500;
+}
+
+.calendar tr.monday {
+  background-color: #e6e8f2;
+}
+
+.calendar tr.wednesday {
+  background-color: #f2f4f8;
+}
+</style>
+
+
+
+<div class="navbar">
+
+  <a href="/"> Home </a>
+  <a href="./research.html">  Research </a>
+  <a href="./teaching.html"> Teaching </a>
+  <a href="./misc.html"> Misc. </a> 
+
+
+
+
+
+
+  </div>
+  
+    
+</div>
+
+
+
+
+
+
+
+<div class="row">
+
+  <div class="side">
+
+
+ <p style="text-align:center;"><img src="\myface.jpg" width="200" height="auto" ></p><br>
+
+ <h3><p style="text-align:center;">John Bergschneider</h3></p>
+ <p style="text-align:center;">University of North Georgia<br> Department of Mathematics</p>
+ <p style="text-align:center;">
+
+    <b>Office</b><br>
+    Newton Oakes Center<br>
+    <b>Contact</b><br>jbergschneider at dot ung dot edu</p>
+
+
+
+
+</div>
+
+
+
+
+
+
+<div class="main">
+
+
+<p style="text-align:center;"><img src="\tri.jpg" width="400" height="auto" ></p><br>
+
+
+    
+    
+    <h2><p style="text-align:left;">About Me</p></h2>
+
+    <p>
+
+<p style="text-align:left;">I am an assistant professor in the <a href="https://ung.edu/mathematics/"> Department of Mathematics</a> at <a href="https://ung.edu/">University of North Georgia</a>.
+Formerly I was a graduate student at Florida State University under the supervision of <a href="https://www.math.fsu.edu/~heil/">Wolfgang Heil</a>.</p>
+
+
+
+
+
+</div></div>
+
+
+
+
+</html>
+
