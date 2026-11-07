@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>John Bergschneider — Selected Work</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Archivo|Roboto&display=swap" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="reference-page">
+  <div class="navbar">
+    <a href="/"> Home </a>
+    <a href="./selected-work.html"> Selected Work </a>
+    <a href="./misc.html"> Misc. </a>
+  </div>
+
+  <div class="row">
+    <div class="side">
+      <p style="text-align:center;"><img src="css/myface.jpg" width="200" height="auto" alt="John Bergschneider"></p><br>
+      <h3><p style="text-align:center;">John Bergschneider</p></h3>
+      <p style="text-align:center; line-height:1.8;">
+        <a href="https://github.com/jhb10c">GitHub</a><br>
+        <a href="mailto:jhb10c@protonmail.com">Email</a>
+      </p>
+    </div>
+
+    <div class="main">
+      <h2>Selected Work</h2>
+
+      <article class="work-entry">
+        <h3>Monad Staking Module</h3>
+        <p>I led the research, design, and implementation of Monad’s staking module and contributed to its production implementation and testing. The system shipped to mainnet and has secured between $200M to $400M in staked assets.</p>
+
+        <h4>Research</h4>
+        <p>I evaluated competing approaches, developed prototypes, presented design tradeoffs to build agreement around the design. The work covered the interface between consensus and execution, validator signature-verification requirements, and accounting for delegation, rewards, and withdrawals.</p>
+        <p>Monad’s consensus and execution advance asynchronously and can have different views of the current epoch. I designed a snapshotting system to define when execution-side staking changes become effective in consensus, then adapted delegation and reward accounting to those timing rules. Reward distribution scales with the number of validators. This sidesteps the need to update every delegator whenever rewards are distributed.</p>
+        <p>With substantial value held in escrow, the protocol required explicit solvency invariants connecting individual delegator positions, aggregate validator stake, and the staking liabilities. I defined these invariants and assisted with model-based differential testing to validate the implementation against an executable model.</p>
+
+        <h4>Implementation</h4>
+        <p>I worked with three other engineers, using Python and C++. My contributions included prototyping, implementing parts of the production module, and supporting testing and validation.</p>
+
+        <h4>Links</h4>
+        <ul class="work-links">
+          <li><a href="https://github.com/category-labs/monad/tree/main/category/execution/monad/staking">Staking implementation</a></li>
+          <li><a href="https://docs.monad.xyz/reference/staking/overview">Staking protocol overview</a></li>
+          <li><a href="https://www.category.xyz/blogs/from-invariants-to-oracles">From Invariants to Oracles</a></li>
+          <li><a href="https://github.com/monad-crypto/MIPs/blob/main/MIPs/MIP-11.md">MIP-11: Priority-fee distribution</a></li>
+        </ul>
+      </article>
+
+      <article class="work-entry">
+        <h3>MIP-8: Page-ified Storage State</h3>
+        <p>I led the research, design, and implementation of MIP-8. This improvement made EVM storage access more efficient by aligning up evm storage representation to disk representation.  
+        This resulted in up to a 128x factor performance increase without changing developer workflows. The work also led to a sparse Merkle commitment approach for efficient page-based storage.</p>
+
+        <h4>Research</h4>
+        <p>I investigated storage bottlenecks in on-chain order books, comparing data structures and modeling the storage costs of posting, matching, and canceling orders. This exposed a mismatch between the EVM’s individual 32-byte storage accesses and the database’s 4 KB pages. I explored bulk-storage opcodes before developing a page-based design that retained existing EVM execution semantics.</p>
+        <p>MIP-8 groups 128 contiguous storage slots into a page and aligns storage commitments and access pricing with that grouping. Accessing one slot warms the page, making subsequent accesses to nearby slots cheaper. The design connects application data layout, gas accounting, and physical storage costs.</p>
+        <p>Committing entire pages introduced a second challenge: most pages are sparsely populated. I developed a merkle commitment, which binds geometry through a bitmap. I analyzed its binding and proof properties and benchmarked the tradeoffs between hashing cost, occupancy, and proof size.</p>
+
+        <h4>Implementation</h4>
+        <p>I developed Rust prototypes and benchmarks, adapting the construction to BLAKE3’s compression blocks and SIMD execution and evaluating alternative hashing schedules and memory layouts. I collaborated with the database team on the production C++ implementation and the formal verification team on Rocq mechanization of the page commitment’s security properties.</p>
+
+        <h4>Links</h4>
+        <ul class="work-links">
+          <li><a href="https://github.com/monad-crypto/MIPs/blob/main/MIPs/MIP-8.md">MIP-8: Page-ified Storage State</a></li>
+          <li><a href="https://category-labs.github.io/category-research/formalverif/blogs/frontier-models/appendix-mip8.html">Formal verification</a></li>
+          <li><a href="https://github.com/category-labs/monad/blob/d3d32b5d4bc6388b7cb0ad93c9e65c64870ac6f4/category/execution/monad/db/storage_page.cpp">Storage page implementation</a></li>
+        </ul>
+      </article>
+
+      <section class="earlier-research">
+        <h3>Topology research</h3>
+        <p>My mathematical research is in low dimensional topology. I am interested in studying topological properties and algebraic invariants of spaces of dimension 3 or less. I studied the classification of topologically stratified spaces called 2-stratifolds. These spaces appear in many different areas. But in particular arise, when you look at how to classify 3-dimensional Lens Spaces. Further, their fundamental group is a particular nice algebraic family: surface groups that are amalgatmed along cyclic subgroups. This family of groups is a nice setting to ask questions about group structure such as Residual Finitness. </p>
+        <img class="research-figure" src="css/4valent.jpg" width="300" height="auto" alt="A four-sheet local model of a 2-stratifold">
+        <h4>Research</h4>
+        <ul class="work-links">
+          <li><a href="papers/FiniteTrivalentCase.pdf">Classifying Trivalent 2-stratifolds with Finite Fundamental Group</a></li>
+          <li><a href="papers/MYThesis.pdf">Classifying 2-stratifolds with Finite and Abelian Fundamental Group</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
