@@ -187,7 +187,7 @@ body {
 .reference-page .side p:first-child { margin:0; }
 .reference-page .side img { border-radius:2px; margin:0; max-width:92px; }
 .reference-page .side h3,.reference-page .side h3 p { margin:0; }
-.reference-page .side > p:last-child { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:.9rem; line-height:1.7; margin:0 0 0 auto; text-align:right!important; }
+.reference-page .side > p:last-child { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:.9rem; line-height:1.7; margin:0; text-align:left!important; }
 .reference-page .main { min-width:0; }
 .reference-page h1,.reference-page h2,.reference-page h3,.reference-page h4 { color:#1a1a1a; font-family:Georgia,'Times New Roman',serif; line-height:1.25; margin-top:1.4em; }
 .reference-page h2:first-child,.reference-page h2:first-child p { margin-top:0; }
@@ -198,7 +198,8 @@ body {
 .reference-page .work-entry h3,.reference-page .work-entry h4 { font-weight:650; }
 .reference-page .work-links { margin-top:1em; }
 @media screen and (min-width:801px) {
-  .reference-page { display:grid; column-gap:48px; grid-template-columns:220px minmax(0,42rem); }
+  .reference-page { display:grid; column-gap:64px; grid-template-columns:240px minmax(0,1fr); max-width:1180px; padding:72px 40px; }
+  .reference-page .main { max-width:50rem; }
 }
 @media screen and (max-width:800px) {
   .reference-page { max-width:42rem; }
