@@ -38,6 +38,8 @@
         <p>Monad’s consensus and execution advance asynchronously and can have different views of the current epoch. I designed a snapshotting system to define when execution-side staking changes become effective in consensus. Afterwards, delegation and reward accounting were adapted to this snapshot progression. Reward distribution scales with the number of validators, avoiding the need to update every delegator whenever rewards are distributed.</p>        
         <p>With substantial value held in escrow, the protocol required explicit solvency invariants connecting delegator positions, validator stake, and the net staking liabilities. I defined these invariants and assisted with model-based differential testing to validate the implementation against an executable model.</p>
 
+        <p>I worked with three other engineers on the production implementation and the model-based invariant validation.</p>
+
         <h4>Links</h4>
         <ul class="work-links">
           <li><a href="https://github.com/category-labs/monad/tree/main/category/execution/monad/staking">Staking implementation</a></li>
